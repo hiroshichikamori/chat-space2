@@ -1,0 +1,37 @@
+.side_bar
+  .side_bar_top
+    .side_bar_top_items
+      .side_bar_top_items_username
+        = current_user.name
+      .side_bar_top_items_icon
+        .side_bar_top_items_icon_pen
+          = link_to do
+            = icon('fas', 'pen-square', class: 'icon')
+        .side_bar_top_items_icon_cog
+          = link_to edit_user_path(current_user) do
+            = icon('fas', 'cog', class: 'icon')
+  .side_bar_group
+    .side_bar_group_name TECHCAMP
+    .side_bar_group_message まだメッセージはありません
+
+  -# .side_bar
+  -# .side_bar__header
+  -#   .side_bar__header__username
+  -#     = current_user.name
+  -#   .side_bar__header__link
+  -#     -# = link_to new_group_path do
+  -#     -#   = fa_icon 'pencil-square-o', class: 'side_bar__header__link__pencil'
+  -#     = link_to new_group_path, class: "side_bar__header__link__pencil" do
+  -#       %i.fa.fa-edit
+  -#     = link_to edit_user_path(current_user) do
+  -#       = icon('fas', 'cog', class: 'side_bar__header__link__cog')
+
+  -# .side_bar__contents
+  -#   - current_user.groups.each do |group|
+  -#     .side_bar__content
+  -#       = link_to group_messages_path(group) do
+  -#         .side_bar__contents__groupname
+  -#           = group.name
+  -#         .side_bar__contents__message
+  -#           = group.show_last_message
+      

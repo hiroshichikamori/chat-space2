@@ -1,0 +1,27 @@
+.chat_main
+  .chat_main_top
+    .chat_main_top_leftcontent
+      .chat_main_top_leftcontent_group test
+      .chat_main_top_leftcontent_member Member: masa
+    .chat_main_top_btn EXIT
+
+  .chat_main_messages
+    .chat_main_messages_message
+      .chat_main_messages_message_box
+        .chat_main_messages_message_box_username masa
+        .chat_main_messages_message_box_datetime 2020/01/20 18:00:00
+      .chat_main_messages_message_text おはよう
+    .chat_main_messages_message
+      .chat_main_messages_message_box
+        .chat_main_messages_message_box_username masa
+        .chat_main_messages_message_box_datetime 2020/01/20 18:00:00
+      .chat_main_messages_message_text おはよう
+
+  .chat_main_form
+    .chat_main_form_message
+      .chat_main_form_message_text type a message
+      %label{class: "input-box__image"}
+        = icon('fas', 'image')
+      %input{class: "input_file",type: "file"}
+      .chat_main_form_message_image
+    .chat_main_form_btn  send
