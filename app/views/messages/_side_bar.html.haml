@@ -5,14 +5,20 @@
         = current_user.name
       .side_bar_top_items_icon
         .side_bar_top_items_icon_pen
-          = link_to do
+          = link_to new_group_path do
             = icon('fas', 'pen-square', class: 'icon')
         .side_bar_top_items_icon_cog
           = link_to edit_user_path(current_user) do
             = icon('fas', 'cog', class: 'icon')
   .side_bar_group
-    .side_bar_group_name TECHCAMP
-    .side_bar_group_message まだメッセージはありません
+    - current_user.groups.each do |group|
+      .side_bar_group_list
+        = link_to group_messages_path(group) do
+          .side_bar_group_list_name
+            = group.name
+          .side_bar_group_list_message
+            = group.show_last_message
+            
 
   -# .side_bar
   -# .side_bar__header

@@ -38,6 +38,7 @@
     width: calc(100vw - 300px);
     height: calc(100vh - 190px);
     background-color: #fafafa;
+    overflow: scroll;
     &_message {
       padding-top: 35px;
       margin-left: 40px;
@@ -68,24 +69,28 @@
     padding: 20px 40px;
     &_message {
       height: 50px;
-      width: calc(100vw - 450px);
-      background-color: white;
-      position: relative;
+      width: calc(100vw - 380px);
+      // background-color: white;
+      display: flex;
       &_text {
+        width: calc(100vw - 400px);
         line-height: 50px;
-        margin-left: 10px;
         color: #999999;
+        padding-left: 10px;
+        position: relative;
+      }
+      &_image {
+        position: absolute;
       }
       .input-box__image {
         position: absolute;
-        right: 10px;
-        top: 13px;
+        top: 16px;
+        left: 920px;
       }
       .input_file {
         visibility: hidden;
       }
       &_icon {
-        
       }
     }
     &_btn {
@@ -96,6 +101,7 @@
       line-height: 50px;
       margin-left: 15px;
       color: #ffffff;
+      // margin-left: 50px;
     }
   }
 }

@@ -27,6 +27,7 @@
         display: flex;
         .icon {
           color: white;
+          margin-left: 5px;
         }
       }
     }
@@ -38,18 +39,20 @@
     background-color: #2f3e51;
     padding-top: 20px;
     padding-left: 20px;
+    
 
-    &_name {
-      color: #ffffff;
-      font-size: 15px;
-    }
-    &_message {
-      color: #ffffff;
-      margin-top: 5px;
-      font-size: 11px;
+    &_list{
+      &_name {
+        color: #ffffff;
+        font-size: 15px;
+      }
+      &_message {
+        color: #ffffff;
+        margin-top: 5px;
+        font-size: 11px;
+      }
     }
   }
-
 }
 
 
