@@ -13,26 +13,6 @@
 
   .chat_main_messages
     = render @messages
-    -# .chat_main_messages_message
-    -#   .chat_main_messages_message_box
-    -#     .chat_main_messages_message_box_username 
-    -#     .chat_main_messages_message_box_datetime 2020/01/20 18:00:00
-    -#   .chat_main_messages_message_text おはよう
-    -# .chat_main_messages_message
-    -#   .chat_main_messages_message_box
-    -#     .chat_main_messages_message_box_username masa
-    -#     .chat_main_messages_message_box_datetime 2020/01/20 18:00:00
-    -#   .chat_main_messages_message_text おはよう
-
-    -# .chat_main_form
-    -# = form_for [@group, @message] do |f|
-    -#   .chat_main_form_message
-    -#     .chat_main_form_message_text type a message
-    -#     %label{class: "input-box__image"}
-    -#       = icon('fas', 'image')
-    -#     %input{class: "input_file",type: "file"}
-    -#     .chat_main_form_message_image
-    -#   .chat_main_form_btn  send
 
   .chat_main_form
     = form_for [@group, @message] do |f|
@@ -41,5 +21,5 @@
         = f.label :image, class: 'chat_main_form_message_image' do
           = icon('fas', 'image', class: 'input-box__image')
           = f.file_field :image, class: 'input_file'
-        = f.submit 'Send', class: 'chat_main_form_message_btn'
+      = f.submit 'Send', class: 'chat_main_form_btn'
         

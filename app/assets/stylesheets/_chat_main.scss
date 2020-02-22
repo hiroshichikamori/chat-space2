@@ -64,38 +64,40 @@
     width: calc(100vw - 300px);
     height: 90px;
     background-color: #d2d2d2;
-    // display: flex;
-    // justify-content: space-between;
     padding: 20px 40px;
+    .new_message {
+      display: flex;
+    }
     &_message {
       height: 50px;
-      width: calc(100vw - 380px);
+      width: 100%;
       display: flex;
+      position: relative;
       &_text {
-        width: calc(100vw - 400px);
+        width: 100%;
         line-height: 50px;
         color: #999999;
-        padding-left: 10px;
-        position: relative;
       }
       &_image {
         position: absolute;
-        bottom: 35px;
-        right: -200px;
+        width: 17px;
+        height: 17px;
+        bottom: 18px;
+        right: 10px;
         .input_file {
           visibility: hidden;
         }
       }
-      &_btn {
-        width: 100px;
-        height: 50px;
-        background-color: #38aef0;
-        text-align: center;
-        line-height: 50px;
-        margin-left: 15px;
-        color: #ffffff;
-        // margin-left: 50px;
-      }
+    }
+    &_btn {
+      width: 100px;
+      height: 50px;
+      background-color: #38aef0;
+      text-align: center;
+      line-height: 50px;
+      margin-left: 15px;
+      color: #ffffff;
+      // margin-left: 50px;
     }
   }
 }

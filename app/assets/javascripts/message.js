@@ -1,5 +1,6 @@
 $(function(){ 
   function buildHTML(message){
+    console.log(message);
    if ( message.image ) {
      var html =
       `<div class="chat_main_messages_message" data-message-id=${message.id}>
@@ -36,7 +37,8 @@ $(function(){
           </p>
         </div>
       </div>`
-   };
+     return html;
+   }
   }
   $('#new_message').on('submit', function(e){
     console.log("発火");
@@ -52,15 +54,52 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log(data);
+      // console.log(data);
       var html = buildHTML(data);
+      // console.log(data);
       $('.chat_main_messages').append(html);
       $('.new_message')[0].reset();
-      $('.chat_main_form_message_btn').prop('disabled', false); 
+      $('.chat_main_form_btn').prop('disabled', false); 
       $('.chat_main_messages').animate({ scrollTop: $('.chat_main_messages')[0].scrollHeight});
-    });
+    })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
-    });
+    })
   });
+
+  var reloadMessages = function() {
+    // console.log("確認");
+    //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+    last_message_id = $('.chat_main_messages_message:last').data("message-id");
+    console.log(last_message_id);
+    $.ajax({
+      //ルーティングで設定した通りのURLを指定
+      url: "api/messages",
+      //ルーティングで設定した通りhttpメソッドをgetに指定
+      type: 'get',
+      dataType: 'json',
+      //dataオプションでリクエストに値を含める
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      console.log(messages);
+      if (messages.length !== 0) {
+        //追加するHTMLの入れ物を作る
+        var insertHTML = '';
+        //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
+        $.each(messages, function(i, message) {
+          insertHTML += buildHTML(message)
+        });
+        //メッセージが入ったHTMLに、入れ物ごと追加
+        $('.chat_main_messages').append(insertHTML);
+        $('.chat_main_messages').animate({ scrollTop: $('.chat_main_messages')[0].scrollHeight});
+      }
+    })
+    .fail(function() {
+      console.log('error');
+    });
+  };
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+    setInterval(reloadMessages, 7000);
+  }
 });
