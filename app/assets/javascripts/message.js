@@ -1,6 +1,6 @@
 $(function(){ 
   function buildHTML(message){
-    console.log(message);
+    // console.log(message);
    if ( message.image ) {
      var html =
       `<div class="chat_main_messages_message" data-message-id=${message.id}>
@@ -54,7 +54,7 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      // console.log(data);
+      console.log(data);
       var html = buildHTML(data);
       // console.log(data);
       $('.chat_main_messages').append(html);
@@ -99,7 +99,7 @@ $(function(){
       console.log('error');
     });
   };
-  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-    setInterval(reloadMessages, 7000);
-  }
+  // if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+  //   setInterval(reloadMessages, 7000);
+  // }
 });
