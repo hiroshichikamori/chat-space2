@@ -1,4 +1,4 @@
-# Rails.application.configure do
+Rails.application.configure do
 #   # Settings specified here will take precedence over those in config/application.rb.
 
 #   # Code is not reloaded between requests.
@@ -75,12 +75,12 @@
 #   # require 'syslog/logger'
 #   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  if ENV["RAILS_LOG_TO_STDOUT"].present?
-    logger           = ActiveSupport::Logger.new(STDOUT)
-    logger.formatter = config.log_formatter
-    config.logger = ActiveSupport::TaggedLogging.new(logger)
-  end
+#   if ENV["RAILS_LOG_TO_STDOUT"].present?
+#     logger           = ActiveSupport::Logger.new(STDOUT)
+#     logger.formatter = config.log_formatter
+#     config.logger = ActiveSupport::TaggedLogging.new(logger)
+#   end
 
-#   # Do not dump schema after migrations.
-  config.active_record.dump_schema_after_migration = false
+# #   # Do not dump schema after migrations.
+#   config.active_record.dump_schema_after_migration = false
 end
