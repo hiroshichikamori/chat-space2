@@ -30,8 +30,9 @@
       font-size: 16px;
       margin-top: 28px;
       margin-right: 40px;
-
-
+      a{
+        color: #38aef0;
+      }
     }
   }
   &_messages {
@@ -98,7 +99,6 @@
       line-height: 50px;
       margin-left: 15px;
       color: #ffffff;
-      // margin-left: 50px;
     }
   }
 }
