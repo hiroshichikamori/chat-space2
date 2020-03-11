@@ -41,7 +41,7 @@ $(function(){
    }
   }
   $('#new_message').on('submit', function(e){
-    console.log("発火");
+    // console.log("発火");
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
@@ -71,7 +71,7 @@ $(function(){
     // console.log("確認");
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     last_message_id = $('.chat_main_messages_message:last').data("message-id");
-    console.log(last_message_id);
+    // console.log(last_message_id);
     $.ajax({
       //ルーティングで設定した通りのURLを指定
       url: "api/messages",
@@ -82,7 +82,7 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      console.log(messages);
+      // console.log(messages);
       if (messages.length !== 0) {
         //追加するHTMLの入れ物を作る
         var insertHTML = '';

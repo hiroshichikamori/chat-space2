@@ -85,7 +85,8 @@
         bottom: 18px;
         right: 10px;
         .input_file {
-          visibility: hidden;
+          // visibility: hidden;
+          display: none;
         }
       }
     }
@@ -97,14 +98,9 @@
       line-height: 50px;
       margin-left: 15px;
       color: #ffffff;
-      // margin-left: 50px;
     }
   }
 }
-
-
-
-
 
 
 
