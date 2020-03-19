@@ -2,7 +2,7 @@
   	width: {min-width: 500px;}
   	height: 100%;
   	display: flex;
-  	justify-content: space-between;
+  	// justify-content: space-between;
   }
 
 .side_bar {
@@ -31,7 +31,6 @@
         }
       }
     }
-    
   }
   &_group {
     width: 300px;
@@ -39,8 +38,6 @@
     background-color: #2f3e51;
     padding-top: 20px;
     padding-left: 20px;
-    
-
     &_list{
       &_name {
         color: #ffffff;
@@ -50,6 +47,9 @@
         color: #ffffff;
         margin-top: 5px;
         font-size: 11px;
+      }
+      a {
+        text-decoration: none;
       }
     }
   }

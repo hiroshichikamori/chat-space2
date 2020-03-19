@@ -87,7 +87,8 @@
         bottom: 18px;
         right: 10px;
         .input_file {
-          visibility: hidden;
+          // visibility: hidden;
+          display: none;
         }
       }
     }
@@ -102,10 +103,6 @@
     }
   }
 }
-
-
-
-
 
 
 
