@@ -5,8 +5,10 @@
         = @group.name
       .chat_main_top_leftcontent_member 
         Member:
-        - @group.group_users.each do |group_user|
-          = group_user.user.name
+        -# - @group.group_users.each do |group_user|
+        -#   = group_user.user.name
+        - @users.each do |user|
+          = user.name
     .chat_main_top_btn
       = link_to edit_group_path(@group.id) do
         EDIT
